@@ -1,0 +1,12 @@
+from django.http import HttpResponse
+from django.shortcuts import render
+from . models import place
+from . models import team
+
+# Create your views here.
+def fun(request):
+    mem = team.objects.all()
+    obj = place.objects.all()
+    return render(request,'index.html',{'result':obj,'member':mem})
+
+
